@@ -1,6 +1,5 @@
 <template>
   <div class="map">
-    <Navbar />
     <div class="google-map" id="map">
 
     </div>
@@ -8,14 +7,9 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import Navbar from '@/components/layouts/Navbar'
 
 export default {
   name: 'GMap',
-  components: {
-    Navbar
-  },
   data() {
     return {
       lat: 53,
