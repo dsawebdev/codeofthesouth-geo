@@ -4,7 +4,7 @@ import firestore from 'firebase/firestore'
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyCVzykab7tfehJNmvHY_7HjZe8EcP5jwoA",
+    apiKey: "AIzaSyDE9QajbcPIABcVFYDXYUV9uX5mQuZUeQ4",
     authDomain: "geo-codeofthesouth.firebaseapp.com",
     databaseURL: "https://geo-codeofthesouth.firebaseio.com",
     projectId: "geo-codeofthesouth",
