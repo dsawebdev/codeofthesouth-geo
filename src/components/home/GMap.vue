@@ -23,7 +23,7 @@ export default {
     renderMap(){
       const map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: this.lat, lng: this.lng},
-        zoom: 8,
+        zoom: 10,
         maxZoom: 15,
         minZoom: 3,
         streetViewControl: false
@@ -38,11 +38,19 @@ export default {
                 lat: data.geolocation.lat,
                 lng: data.geolocation.lng
               },
+<<<<<<< HEAD
               map,
             })
             //add click event to marker
             marker.addListener('click', () => {
               this.$router.push({ name: 'ViewProfile', params: { id: doc.id }})
+=======
+              map
+            })
+            //add click event to marker
+            marker.addListener('click', () => {
+              console.log(doc.id)
+>>>>>>> 521c9daf88a983e598ad458c9dd44b6749f360af
             })
           }
         });
@@ -72,9 +80,7 @@ export default {
         })
         .then(() => {
           this.renderMap()
-        })
-
-        
+        })  
       }, (err) => {
         console.log(err)
         this.renderMap()

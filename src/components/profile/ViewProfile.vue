@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div class="view-profile container">
         <div class="card" v-if="profile">
             <h2 class="deep-purple-text center">{{ profile.alias }} Wall</h2>
@@ -14,10 +15,18 @@
             </form>
         </div>
     </div>
+=======
+  <div class="view-profile container">
+    <div class="card" v-if="profile">
+      <h2 class="deep-purple-text center">{{ profile.alias }}'s Backboard</h2>
+    </div>
+  </div>
+>>>>>>> 521c9daf88a983e598ad458c9dd44b6749f360af
 </template>
 
 <script>
 import db from '@/firebase/init'
+<<<<<<< HEAD
 import firebase from 'firebase'
 
 export default {
@@ -64,3 +73,26 @@ export default {
     }
 }
 </script>
+=======
+export default {
+  name: 'ViewProfile',
+  data() {
+    return {
+      profile: null
+    }
+  },
+  created() {
+    let ref = db.collection('users')
+    ref.doc(this.$route.params.id).get()
+    .then(user => {
+      this.profile = user.data()
+      console.log(this.profile)
+    })
+  },
+}
+</script>
+
+<style>
+
+</style>
+>>>>>>> 521c9daf88a983e598ad458c9dd44b6749f360af

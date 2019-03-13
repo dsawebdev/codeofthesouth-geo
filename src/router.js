@@ -6,6 +6,7 @@ import Login from '@/components/auth/Login'
 import ViewProfile from '@/components/profile/ViewProfile'
 import firebase from 'firebase'
 
+
 Vue.use(Router)
 
 const router = new Router({
@@ -32,7 +33,13 @@ const router = new Router({
       path: '/profile/:id',
       name: 'ViewProfile',
       component: ViewProfile,
+<<<<<<< HEAD
       requiresAuth: true
+=======
+      meta: {
+        requiresAuth: true
+      }
+>>>>>>> 521c9daf88a983e598ad458c9dd44b6749f360af
     }
   ]
 })
@@ -47,7 +54,11 @@ router.beforeEach((to, from, next) => {
       next()
     } else {
       // no user signed in, redirect to login
+<<<<<<< HEAD
       next({ name: 'Login'})
+=======
+      next({name: 'Login'})
+>>>>>>> 521c9daf88a983e598ad458c9dd44b6749f360af
     }
   } else {
     next()
