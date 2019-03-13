@@ -46,6 +46,7 @@ export default {
                     remove: /[$*_+~.()'"!\-:@]/g,
                     lower: true
                 })
+
                 let ref = db.collection('users').doc(this.slug)
                 ref.get().then(doc => {
                     if(doc.exists){
@@ -58,11 +59,11 @@ export default {
                                 geolocation: null,
                                 user_id: cred.user.uid
                             })
-                        }).then(() => {
+                        })
+                        .then(() => {
                             this.$router.push({ name: 'GMap' })
                         })
                         .catch(err => {
-                            console.log(err)
                             this.feedback = err.message
                         })
                         this.feedback = 'This alias is free to use'
